@@ -119,8 +119,48 @@ const persons = [
 ];
 
 // #1. Count of people older than 27
+const peopleOlderThan27 = persons.filter(function (person) {
+  if (person.age > 27) {
+    return true;
+  }
+});
+console.log('peopleOlderThan27', peopleOlderThan27);
 // #2. Subarray of people living in New York
+const peopleInNY = persons.filter(function (person) {
+  if (person.city === 'New York') {
+    return true;
+  }
+});
+console.log('peopleInNY', peopleInNY);
 // #3. Total age of this group of people
+const totalAge = persons.reduce(function (sum, person) {
+  return sum + person.age;
+}, 0);
+console.log('Total Age of people', totalAge);
 // #4. Add a new property of 'lastName' to each object and give it any value
+const newPeopleArr = persons.map(function (person) {
+  person.lastName = '';
+  return person;
+});
+persons.forEach(function (person) {
+  // Changes the original array
+  person.lastName = '';
+  return person;
+});
+console.log('oldPeopleArrWithForEach', persons);
 // #5. Find the first person from Boston who appears in this array
+const firstPersonFromBoston = persons.find(function (person) {
+  if (person.city === 'Boston') {
+    return true;
+  }
+});
+console.log('firstPersonFromBoston', firstPersonFromBoston);
 // #6. Sort the array in the order of decreasing age (oldest person first)
+const ageSortedArray = persons.sort(function (p1, p2) {
+  if (p1.age > p2.age) {
+    return -1;
+  } else {
+    return 1;
+  }
+});
+console.log('ageSortedArray', ageSortedArray);
