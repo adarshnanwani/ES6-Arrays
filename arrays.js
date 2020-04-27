@@ -66,7 +66,6 @@ console.log('arr3 after slice', arr3);
 
 // MAP - Perform an operation on every element of an array and
 // returns a new array
-console.clear();
 console.log('arr3', arr3);
 const doubleValueArr3 = arr3.map(function (item) {
   return item * 2;
@@ -92,12 +91,17 @@ const oddEvenArr3 = arr3.map(function (item) {
   }
 });
 console.log('oddEvenArr3', oddEvenArr3);
-
+console.clear();
 // REDUCE -- Iterate through the array and return a reduced output
 const sumOfArr3 = arr3.reduce(function (sum, item) {
   return sum + item;
 }, 0);
 console.log('sumOfArr3', sumOfArr3);
+
+const sumOfArr3R = arr3.reduce(function (sum, item) {
+  return (sum || 0) + item;
+});
+console.log('sumOfArr3R', sumOfArr3R);
 
 // Find odd elements and double them
 const oddArr3 = arr3.reduce(function (oddArr, item) {
