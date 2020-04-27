@@ -55,3 +55,32 @@ const { firstName, lastName, city, age: personAge } = person2; // destructuring
 console.log(
   `${firstName} ${lastName} is ${personAge} years old and lives in ${city}`
 );
+
+// Spread operator
+console.clear();
+const arr1 = [1, 2];
+console.log('arr1', arr1);
+const arr2 = [3, 4, 5];
+console.log('arr2', arr2);
+
+// Combine
+//arr1.push(...arr2);
+//console.log('arr1 after push', arr1);
+
+arr1.unshift(...arr2);
+console.log('arr1 after unshift', arr1);
+
+const copyArr1 = [...arr1];
+console.log('copyArr1', copyArr1);
+
+const newArr = ['sad', 'fesd', ...arr2, 234, 3465, 5];
+console.log(newArr);
+
+// Spread with objects
+
+const person3 = { ...person2, city: 'Boston', jobTitle: 'Developer' };
+console.log('person3', person3);
+
+console.log(Math.min(3, 345, 345, 56734, 123, 134342, 453, 566556));
+
+console.log(Math.max(...arr2));
